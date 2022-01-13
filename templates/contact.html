@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+{%load static %}
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us</title>
+    <link rel="stylesheet" href='{% static 'contactus.css' %}'>
+    {% comment %} <link rel="stylesheet" href=" "> {% endcomment %}
+</head>
+
+<body style=" color:white; background-color:  rgb(226, 195, 223);">
+    <nav class="navbar">
+        <ul>
+            <li>
+                <a href="home">Home</a>
+            </li>
+            <li>
+                <a href="about_us">About Us</a>
+            </li>
+            <li>
+                <a href="contact_us">Contact Us</a>
+            </li>
+            <li>
+                <a href="login">Login</a>
+            </li>
+        </ul>
+    </nav>
+
+    <div class="container2">
+        <div>
+            <h2>CONTACT US</h2>
+        </div>
+        <div id="details">
+            <h3>Email: trial@trial.com</h3>
+            <h3>Phone: 9830020322</h3>
+            <h3>Follow us on:</h3>
+        </div>
+        <div id="cont">
+            <a href="https://www.facebook.com/" target="blank" id="fb" class="social">Facebook</a>
+            <a href="https://www.Twitter.com/" target="blank" id="tw" class="social">Twitter</a>
+            <a href="https://www.instagram.com/" target="blank" id="ig" class="social">Instagram</a>
+
+        </div>
+        <div id="container">
+            <div>
+                <h2>MESSAGE US HERE</h2>
+            </div>
+        <form method="post" action="/contact_us">
+        {% csrf_token %}
+            <div>
+                <label for="Name" class="labe">Full Name:</label>
+                <input type="text" class="form" id="name" Name="name" placeholder="e.g.John Rafael">
+            </div>
+            <div>
+                <label for="pnum" class="labe">Phone Number:</label>
+                <input type="numbers" class="form" id="phone" Name="phone" placeholder="e.g.1234567890">
+            </div>
+            <div>
+                <label for="mail" class="labe">Email Adress:</label>
+                <input type="email" class="form" id="email" Name="email" placeholder="example@rediffmail.com">
+            </div>
+            <div>
+                <label for="Name" class="labe">Leave your message here:</label>
+                <textarea id="mess" class="form" id="desc" Name="desc"
+                    placeholder="your message....."></textarea>
+            </div>
+            <div>
+            <input type="submit" class="form" value="submit">
+        </div>
+        </form>
+    </div>
+    </div>
+</body>
+
+</html>
